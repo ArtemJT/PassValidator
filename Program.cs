@@ -9,7 +9,7 @@
             continue;
         }
 
-        string[] strings = splitString(line);
+        string[] strings = line.Split(separator: " ");
         char? symb = char.Parse(strings[0]);
 
         int[]? counts = splitCounters(strings[1]);
@@ -48,11 +48,6 @@ catch (IOException e)
 {
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine(e.Message);
-}
-
-static string[] splitString(string s)
-{
-    return s.Split(separator: " ");
 }
 
 static int[]? splitCounters(string s)
